@@ -6,6 +6,16 @@ public class Equipo {
     public Equipo(String nombreEquipo) {
         this.nombreEquipo = nombreEquipo;
     }
+//Getter
+    public String getNombreEquipo() {
+        return nombreEquipo;
+    }
+
+      //toString
+    
+    public String toString() {
+        return "Equipo [nombreEquipo=" + nombreEquipo + "]";
+    }
 
     
 }
