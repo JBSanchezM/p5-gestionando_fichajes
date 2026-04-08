@@ -8,5 +8,26 @@ public class Entrenador {
         this.formacionPreferida = formacionPreferida;
     }
 
+    //Getter & Setter
+
+    public String getNombreEntrenador() {
+        return nombreEntrenador;
+    }
+
+    public String getFormacionPreferida() {
+        return formacionPreferida;
+    }
+
+    public void setFormacionPreferida(String formacionPreferida) {
+        this.formacionPreferida = formacionPreferida;
+    }
+
+      //toString
+      
+   
+    public String toString() {
+        return "Entrenador [nombreEntrenador=" + nombreEntrenador + ", formacionPreferida=" + formacionPreferida + "]";
+    }
+
     
 }
