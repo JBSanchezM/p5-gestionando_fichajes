@@ -31,16 +31,14 @@ public class Jugador {
     }
 
     /**
-     * Devuelve el nombre que aparece en la camiseta del jugador.
      * 
-     * @return nombre de la camiseta
+     * @return nombre en la camiseta del jugador
      */
     public String getNombreCamiseta() {
         return nombreCamiseta;
     }
 
     /**
-     * Modifica el nombre que aparece en la camiseta del jugador.
      * 
      * @param nombreCamiseta nuevo nombre de la camiseta
      */
@@ -50,7 +48,6 @@ public class Jugador {
     }
 
     /**
-     * Devuelve la fecha de nacimiento del jugador
      * 
      * @return fecha de naciemiento del jugador
      */
@@ -95,8 +92,8 @@ public class Jugador {
     }
 
     /**
-     * El jugador solicita el traspaso.
-     * Cambia su estado interno a "traspaso solicitado"
+     * Indica que el jugador ha solicitado un traspaso
+     * Cambia traspaso solicitado como true
      */
     public void solicitarTraspaso() {
         this.traspasoSolicitado = true;
@@ -104,12 +101,20 @@ public class Jugador {
     }
 
     /**
-     * El jugador cancela el traspaso
-     * Cambia su estado interno a "traspaso no solicitado"
+     * Indica que el jugador ha cancelado un traspaso
+     * Cambia traspaso solicitado como false
      */
     public void cancelarTraspaso() {
         this.traspasoSolicitado = false;
         System.out.println("el jugador " + nombreCamiseta + " ha cancelado el traspaso");
+    }
+
+    /**
+     * Finaliza el proceso de traspaso del jugador,
+     * reseteando su estado de solicitud.
+     */
+    public void finalizarTraspaso() {
+        this.traspasoSolicitado = false;
     }
 
     // toString
@@ -120,8 +125,11 @@ public class Jugador {
      */
     @Override
     public String toString() {
-        return "Jugador [nombreCamiseta=" + nombreCamiseta + ", fechaDeNacimiento=" + fechaDeNacimiento + ", posicion="
-                + posicion + ", traspasoSolicitado=" + traspasoSolicitado + "]";
+        return "Ficha Tecnica del Jugador:"
+                + "\n Nombre: " + nombreCamiseta
+                + "\n Fecha de nacimiento: " + fechaDeNacimiento
+                + "\n Posicion: " + posicion
+                + "\n Traspaso solicitado: " + traspasoSolicitado + "\n";
     }
 
 }

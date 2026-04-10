@@ -58,6 +58,12 @@ public class App {
         eq2.setEntrenador(en2);
         eq1.setEntrenador(en3);
 
+        // System.out.println(eq1);
+        eq3.verPlantilla();
+        j10.solicitarTraspaso();
+        eq3.transferirJugador(j10, eq1);
+        eq3.verPlantilla();
+        eq1.verPlantilla();
     }
 
 }

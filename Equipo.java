@@ -14,9 +14,8 @@ public class Equipo {
 
     /**
      * Contructor de la clase Equipo.
-     * Crea un nuevo Equipo con sus atributos.
-     * El entrenador se inicializa como null.
-     * Crea un ArrayList que se llenara con jugadores.
+     * Crea un equipo con nombre, sin entrenador asignado
+     * y con una lista vacía de jugadores.
      * 
      * @param nombreEquipo nombre del equipo.
      */
@@ -74,14 +73,47 @@ public class Equipo {
     }
 
     /**
+     * Muestra por consola la plantilla del equipo,
+     * mostrando la informacion de cada jugador.
+     */
+    public void verPlantilla() {
+        for (int i = 0; i < jugadores.size(); i++) {
+            System.out.println(jugadores.get(i));
+        }
+    }
+
+    /**
+     * Transfiere un jugador desde este equipo a otro,
+     * siempre que pertenezca al equipo y haya solicitado el traspaso.
+     * 
+     * @param jug jugador a transferir
+     * @param eq  equipo destino
+     */
+
+    public void transferirJugador(Jugador jug, Equipo eq) {
+        if (jugadores.contains(jug) == true && jug.isTraspasoSolicitado()) {
+            jugadores.remove(jug);
+            eq.getJugadores().add(jug);
+            jug.finalizarTraspaso();
+            System.out.println("Transferencia realizada con exito");
+        } else
+            System.out.println("Transferencia no realizada");
+
+    }
+
+    /**
      * Devuelve una representación en texto del equipo con todos sus datos.
      * 
-     * @return cadena con la información del equipo.
+     * @return Ficha tecnica que muestra el nombre del equipo, el nombre del
+     *         entrenador y la cantidad de jugadores del equipo.
      */
 
     @Override
     public String toString() {
-        return "Equipo [nombreEquipo=" + nombreEquipo + "]";
+        return "Ficha Tecnica:"
+                + "\n Equipo: " + nombreEquipo
+                + "\n Entrenador: " + entrenador.getNombreEntrenador()
+                + "\n Jugadores: " + jugadores.size();
     }
 
 }
