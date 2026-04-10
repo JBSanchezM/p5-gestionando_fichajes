@@ -12,6 +12,7 @@ public class Jugador {
     private LocalDate fechaDeNacimiento;
     private String posicion;
     private boolean traspasoSolicitado;
+    private static int contadorJugadores;
 
     /**
      * Constructor de la clase Jugador.
@@ -28,6 +29,7 @@ public class Jugador {
         this.fechaDeNacimiento = fechaDeNacimiento;
         this.posicion = posicion;
         this.traspasoSolicitado = false;
+        contadorJugadores++;
     }
 
     /**
@@ -115,6 +117,14 @@ public class Jugador {
      */
     public void finalizarTraspaso() {
         this.traspasoSolicitado = false;
+    }
+
+    /**
+     * 
+     * @return número total de jugadores creados
+     */
+    public static int getContadorJugadores() {
+        return contadorJugadores;
     }
 
     // toString

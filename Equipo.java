@@ -11,6 +11,7 @@ public class Equipo {
     private String nombreEquipo;
     private Entrenador entrenador;
     private ArrayList<Jugador> jugadores;
+    private static int contadorEquipos;
 
     /**
      * Contructor de la clase Equipo.
@@ -23,6 +24,7 @@ public class Equipo {
         this.nombreEquipo = nombreEquipo;
         this.entrenador = null;
         this.jugadores = new ArrayList<Jugador>();
+        contadorEquipos++;
     }
 
     /**
@@ -99,6 +101,14 @@ public class Equipo {
         } else
             System.out.println("Transferencia no realizada");
 
+    }
+
+    /**
+     * 
+     * @return número total de equipos creados
+     */
+    public static int getContadorEquipos() {
+        return contadorEquipos;
     }
 
     /**

@@ -7,6 +7,7 @@
 public class Entrenador {
     private String nombreEntrenador;
     private String formacionPreferida;
+    private static int contadorEntrenadores;
 
     /**
      * Constructor de la clase Entrenador
@@ -18,6 +19,7 @@ public class Entrenador {
     public Entrenador(String nombreEntrenador, String formacionPreferida) {
         this.nombreEntrenador = nombreEntrenador;
         this.formacionPreferida = formacionPreferida;
+        contadorEntrenadores++;
     }
 
     /**
@@ -46,6 +48,14 @@ public class Entrenador {
      */
     public void setFormacionPreferida(String formacionPreferida) {
         this.formacionPreferida = formacionPreferida;
+    }
+
+    /**
+     * 
+     * @return número total de entrenadores creados
+     */
+    public static int getContadorEntrenadores() {
+        return contadorEntrenadores;
     }
 
     /**
