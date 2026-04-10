@@ -1,33 +1,61 @@
+/**
+ * Representa un Entrenador de la liga profesional.
+ * 
+ * @author Jonathan Sanchez
+ * @version 1.0
+ */
 public class Entrenador {
     private String nombreEntrenador;
     private String formacionPreferida;
 
-    //Constructor
+    /**
+     * Constructor de la clase Entrenador
+     * Crea un nuevo entrenador con los daros basicos
+     * 
+     * @param nombreEntrenador   Nombre del entrenador
+     * @param formacionPreferida Formacion preferida del entrenador
+     */
     public Entrenador(String nombreEntrenador, String formacionPreferida) {
         this.nombreEntrenador = nombreEntrenador;
         this.formacionPreferida = formacionPreferida;
     }
 
-    //Getter & Setter
+    /**
+     * Devuelve el nombre del entrenador
+     * 
+     * @return nombre del entrenador
+     */
 
     public String getNombreEntrenador() {
         return nombreEntrenador;
     }
 
+    /**
+     * Devuelve la formacion preferida del entrenador
+     * 
+     * @return formacion preferida del entrenador
+     */
     public String getFormacionPreferida() {
         return formacionPreferida;
     }
 
+    /**
+     * Modifica la formacion preferida del entrenador
+     * 
+     * @param formacionPreferida nueva formacion preferida
+     */
     public void setFormacionPreferida(String formacionPreferida) {
         this.formacionPreferida = formacionPreferida;
     }
 
-      //toString
-      
-   
+    /**
+     * Devuelve una representación en texto del entrenador con todos sus datos.
+     * 
+     * @return cadena con la información del entrenador
+     */
+    @Override
     public String toString() {
         return "Entrenador [nombreEntrenador=" + nombreEntrenador + ", formacionPreferida=" + formacionPreferida + "]";
     }
 
-    
 }
