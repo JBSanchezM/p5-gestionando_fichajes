@@ -14,8 +14,8 @@ public class Equipo {
     private static int contadorEquipos;
 
     /**
-     * Contructor de la clase Equipo.
-     * Crea un equipo con nombre, sin entrenador asignado
+     * Constructor de la clase Equipo.
+     * Crea un equipo con nombre indicado, sin entrenador asignado
      * y con una lista vacía de jugadores.
      * 
      * @param nombreEquipo nombre del equipo.
@@ -28,7 +28,7 @@ public class Equipo {
     }
 
     /**
-     * Muestra el nombre del equipo.
+     * Devuelve el nombre del equipo.
      * 
      * @return nombre del equipo
      */
@@ -37,7 +37,7 @@ public class Equipo {
     }
 
     /**
-     * Muestra el entrenador asignado.
+     * Devuelve el entrenador asignado al equipo.
      * 
      * @return entrenador asignado
      */
@@ -46,7 +46,7 @@ public class Equipo {
     }
 
     /**
-     * Muestra la lista de jugadores del equipo.
+     * Devuelve la lista de jugadores del equipo.
      * 
      * @return lista de jugadores del equipo.
      */
@@ -55,9 +55,9 @@ public class Equipo {
     }
 
     /**
-     * Modifica el entrenador asignado
+     * Asigna un entrenador al equipo
      * 
-     * @param entrenador nuevo entrenador
+     * @param entrenador nuevo entrenador del equipo
      */
     public void setEntrenador(Entrenador entrenador) {
         this.entrenador = entrenador;
@@ -65,9 +65,9 @@ public class Equipo {
 
     /**
      * Añade un jugador al equipo.
-     * No se realizan comprobaciones sobre duplicados.
+     * No se realizan comprobaciones de duplicados.
      * 
-     * @param j jugador que se añade al equipo
+     * @param j jugador  a añadir al equipo
      */
     public void añadirJugador(Jugador j) {
         jugadores.add(j);
@@ -76,7 +76,7 @@ public class Equipo {
 
     /**
      * Muestra por consola la plantilla del equipo,
-     * mostrando la informacion de cada jugador.
+     * mostrando la información de cada jugador.
      */
     public void verPlantilla() {
         for (int i = 0; i < jugadores.size(); i++) {
@@ -85,8 +85,8 @@ public class Equipo {
     }
 
     /**
-     * Transfiere un jugador desde este equipo a otro,
-     * siempre que pertenezca al equipo y haya solicitado el traspaso.
+     * Transfiere un jugador desde este equipo a otro equipo,
+     * siempre que pertenezca al equipo actual y haya solicitado el traspaso.
      * 
      * @param jug jugador a transferir
      * @param eq  equipo destino
@@ -104,6 +104,7 @@ public class Equipo {
     }
 
     /**
+     * Devuelve el número total de equipos creados en el sistema.
      * 
      * @return número total de equipos creados
      */
@@ -112,7 +113,7 @@ public class Equipo {
     }
 
     /**
-     * Devuelve una representación en texto del equipo con todos sus datos.
+     * Devuelve una representación en texto del equipo con su informacion basica.
      * 
      * @return Ficha tecnica que muestra el nombre del equipo, el nombre del
      *         entrenador y la cantidad de jugadores del equipo.
@@ -123,7 +124,7 @@ public class Equipo {
         return "Ficha Tecnica:"
                 + "\n Equipo: " + nombreEquipo
                 + "\n Entrenador: " + entrenador.getNombreEntrenador()
-                + "\n Jugadores: " + jugadores.size();
+                + "\n Jugadores: " + jugadores.size() + "\n";
     }
 
 }

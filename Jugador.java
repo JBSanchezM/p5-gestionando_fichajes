@@ -33,14 +33,16 @@ public class Jugador {
     }
 
     /**
-     * 
-     * @return nombre en la camiseta del jugador
+     * Devuelve el nombre que aparece en la camiseta del jugador.
+     *
+     * @return nombre de la camiseta del jugador
      */
     public String getNombreCamiseta() {
         return nombreCamiseta;
     }
 
     /**
+     * Modifica el nombre de la camiseta del jugador
      * 
      * @param nombreCamiseta nuevo nombre de la camiseta
      */
@@ -50,8 +52,9 @@ public class Jugador {
     }
 
     /**
-     * 
-     * @return fecha de naciemiento del jugador
+     * Devuelve la fecha de nacimiento del jugador.
+     *
+     * @return fecha de nacimiento del jugador
      */
     public LocalDate getFechaDeNacimiento() {
         return fechaDeNacimiento;
@@ -120,18 +123,18 @@ public class Jugador {
     }
 
     /**
-     * 
-     * @return número total de jugadores creados
+     * Devuelve el número total de jugadores creados en el sistema.
+     *
+     * @return contador total de jugadores
      */
     public static int getContadorJugadores() {
         return contadorJugadores;
     }
 
-    // toString
     /**
-     * Devuelve una representación en texto del jugador con todos sus datos.
+     * Devuelve una representación en textual del jugador con todos sus datos.
      * 
-     * @return cadena con la información del jugador
+     * @return representacion legible del jugador
      */
     @Override
     public String toString() {
