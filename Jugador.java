@@ -94,6 +94,24 @@ public class Jugador {
         return traspasoSolicitado;
     }
 
+    /**
+     * El jugador solicita el traspaso.
+     * Cambia su estado interno a "traspaso solicitado"
+     */
+    public void solicitarTraspaso() {
+        this.traspasoSolicitado = true;
+        System.out.println("el jugador " + nombreCamiseta + " ha solicitado el traspaso");
+    }
+
+    /**
+     * El jugador cancela el traspaso
+     * Cambia su estado interno a "traspaso no solicitado"
+     */
+    public void cancelarTraspaso() {
+        this.traspasoSolicitado = false;
+        System.out.println("el jugador " + nombreCamiseta + " ha cancelado el traspaso");
+    }
+
     // toString
     /**
      * Devuelve una representación en texto del jugador con todos sus datos.

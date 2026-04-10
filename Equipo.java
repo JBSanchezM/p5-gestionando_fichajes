@@ -62,8 +62,6 @@ public class Equipo {
         this.entrenador = entrenador;
     }
 
-    // Metodos
-
     /**
      * Añade un jugador al equipo.
      * No se realizan comprobaciones sobre duplicados.
