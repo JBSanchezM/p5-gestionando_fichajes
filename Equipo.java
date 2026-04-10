@@ -9,11 +9,32 @@ public class Equipo {
     // Constructor
     public Equipo(String nombreEquipo) {
         this.nombreEquipo = nombreEquipo;
+        this.entrenador = null;
+        this.jugadores = new ArrayList<Jugador>();
     }
 
-    // Getter
+    // Getter & Setter
     public String getNombreEquipo() {
         return nombreEquipo;
+    }
+
+    public Entrenador getEntrenador() {
+        return entrenador;
+    }
+
+    public ArrayList<Jugador> getJugadores() {
+        return jugadores;
+    }
+
+    public void setEntrenador(Entrenador entrenador) {
+        this.entrenador = entrenador;
+    }
+
+    // Metodos
+
+    public void añadirJugador(Jugador j) {
+        jugadores.add(j);
+
     }
 
     // toString

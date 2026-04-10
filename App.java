@@ -2,6 +2,7 @@ import java.time.LocalDate;
 
 public class App {
     public static void main(String[] args) {
+        // Creando Jugadores
         Jugador j1 = new Jugador("Marcos", LocalDate.of(1992, 10, 21), "Delantero");
         Jugador j2 = new Jugador("Lucas", LocalDate.of(1993, 11, 12), "Arquero");
         Jugador j3 = new Jugador("Juan", LocalDate.of(1994, 7, 19), "Defensa");
@@ -13,13 +14,38 @@ public class App {
         Jugador j9 = new Jugador("Pedro", LocalDate.of(1994, 3, 22), "Defensa");
         Jugador j10 = new Jugador("Ruben", LocalDate.of(1995, 8, 17), "Lateral");
 
+        // Creando Entrenadores
         Entrenador en1 = new Entrenador("Carlos", "4-3-3");
         Entrenador en2 = new Entrenador("Pepe", "3-4-3");
         Entrenador en3 = new Entrenador("Jhan", "4-3-2-1");
-        Entrenador en4 = new Entrenador("Cristian", "4-4-2");
+        
 
+        // Creando Equipo
         Equipo eq1 = new Equipo("Real Madrid");
         Equipo eq2 = new Equipo("Barcelona");
         Equipo eq3 = new Equipo("Villareal");
+
+        //Añadiendo Jugadores
+        eq1.añadirJugador(j1);
+        eq1.añadirJugador(j2);
+        eq1.añadirJugador(j3);
+        eq1.añadirJugador(j4);
+
+        eq2.añadirJugador(j5);
+        eq2.añadirJugador(j6);
+        eq2.añadirJugador(j7);
+
+        eq3.añadirJugador(j8);
+        eq3.añadirJugador(j9);
+        eq3.añadirJugador(j10);
+
+        // Añadiendo Entrenadores
+        eq3.setEntrenador(en1);
+        eq2.setEntrenador(en2);
+        eq1.setEntrenador(en3);
+
+
+
     }
+
 }
