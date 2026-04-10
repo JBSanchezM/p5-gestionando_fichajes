@@ -12,6 +12,7 @@ public class Jugador {
     private LocalDate fechaDeNacimiento;
     private String posicion;
     private boolean traspasoSolicitado;
+    private static int contadorJugadores;
 
     /**
      * Constructor de la clase Jugador.
@@ -28,19 +29,20 @@ public class Jugador {
         this.fechaDeNacimiento = fechaDeNacimiento;
         this.posicion = posicion;
         this.traspasoSolicitado = false;
+        contadorJugadores++;
     }
 
     /**
      * Devuelve el nombre que aparece en la camiseta del jugador.
-     * 
-     * @return nombre de la camiseta
+     *
+     * @return nombre de la camiseta del jugador
      */
     public String getNombreCamiseta() {
         return nombreCamiseta;
     }
 
     /**
-     * Modifica el nombre que aparece en la camiseta del jugador.
+     * Modifica el nombre de la camiseta del jugador
      * 
      * @param nombreCamiseta nuevo nombre de la camiseta
      */
@@ -50,9 +52,9 @@ public class Jugador {
     }
 
     /**
-     * Devuelve la fecha de nacimiento del jugador
-     * 
-     * @return fecha de naciemiento del jugador
+     * Devuelve la fecha de nacimiento del jugador.
+     *
+     * @return fecha de nacimiento del jugador
      */
     public LocalDate getFechaDeNacimiento() {
         return fechaDeNacimiento;
@@ -95,8 +97,8 @@ public class Jugador {
     }
 
     /**
-     * El jugador solicita el traspaso.
-     * Cambia su estado interno a "traspaso solicitado"
+     * Indica que el jugador ha solicitado un traspaso
+     * Cambia traspaso solicitado como true
      */
     public void solicitarTraspaso() {
         this.traspasoSolicitado = true;
@@ -104,24 +106,43 @@ public class Jugador {
     }
 
     /**
-     * El jugador cancela el traspaso
-     * Cambia su estado interno a "traspaso no solicitado"
+     * Indica que el jugador ha cancelado un traspaso
+     * Cambia traspaso solicitado como false
      */
     public void cancelarTraspaso() {
         this.traspasoSolicitado = false;
         System.out.println("el jugador " + nombreCamiseta + " ha cancelado el traspaso");
     }
 
-    // toString
     /**
-     * Devuelve una representación en texto del jugador con todos sus datos.
+     * Finaliza el proceso de traspaso del jugador,
+     * reseteando su estado de solicitud.
+     */
+    public void finalizarTraspaso() {
+        this.traspasoSolicitado = false;
+    }
+
+    /**
+     * Devuelve el número total de jugadores creados en el sistema.
+     *
+     * @return contador total de jugadores
+     */
+    public static int getContadorJugadores() {
+        return contadorJugadores;
+    }
+
+    /**
+     * Devuelve una representación en textual del jugador con todos sus datos.
      * 
-     * @return cadena con la información del jugador
+     * @return representacion legible del jugador
      */
     @Override
     public String toString() {
-        return "Jugador [nombreCamiseta=" + nombreCamiseta + ", fechaDeNacimiento=" + fechaDeNacimiento + ", posicion="
-                + posicion + ", traspasoSolicitado=" + traspasoSolicitado + "]";
+        return "Ficha Tecnica del Jugador:"
+                + "\n Nombre: " + nombreCamiseta
+                + "\n Fecha de nacimiento: " + fechaDeNacimiento
+                + "\n Posicion: " + posicion
+                + "\n Traspaso solicitado: " + traspasoSolicitado + "\n";
     }
 
 }

@@ -11,12 +11,12 @@ public class Equipo {
     private String nombreEquipo;
     private Entrenador entrenador;
     private ArrayList<Jugador> jugadores;
+    private static int contadorEquipos;
 
     /**
-     * Contructor de la clase Equipo.
-     * Crea un nuevo Equipo con sus atributos.
-     * El entrenador se inicializa como null.
-     * Crea un ArrayList que se llenara con jugadores.
+     * Constructor de la clase Equipo.
+     * Crea un equipo con nombre indicado, sin entrenador asignado
+     * y con una lista vacía de jugadores.
      * 
      * @param nombreEquipo nombre del equipo.
      */
@@ -24,10 +24,11 @@ public class Equipo {
         this.nombreEquipo = nombreEquipo;
         this.entrenador = null;
         this.jugadores = new ArrayList<Jugador>();
+        contadorEquipos++;
     }
 
     /**
-     * Muestra el nombre del equipo.
+     * Devuelve el nombre del equipo.
      * 
      * @return nombre del equipo
      */
@@ -36,7 +37,7 @@ public class Equipo {
     }
 
     /**
-     * Muestra el entrenador asignado.
+     * Devuelve el entrenador asignado al equipo.
      * 
      * @return entrenador asignado
      */
@@ -45,7 +46,7 @@ public class Equipo {
     }
 
     /**
-     * Muestra la lista de jugadores del equipo.
+     * Devuelve la lista de jugadores del equipo.
      * 
      * @return lista de jugadores del equipo.
      */
@@ -54,9 +55,9 @@ public class Equipo {
     }
 
     /**
-     * Modifica el entrenador asignado
+     * Asigna un entrenador al equipo
      * 
-     * @param entrenador nuevo entrenador
+     * @param entrenador nuevo entrenador del equipo
      */
     public void setEntrenador(Entrenador entrenador) {
         this.entrenador = entrenador;
@@ -64,9 +65,9 @@ public class Equipo {
 
     /**
      * Añade un jugador al equipo.
-     * No se realizan comprobaciones sobre duplicados.
+     * No se realizan comprobaciones de duplicados.
      * 
-     * @param j jugador que se añade al equipo
+     * @param j jugador  a añadir al equipo
      */
     public void añadirJugador(Jugador j) {
         jugadores.add(j);
@@ -74,14 +75,56 @@ public class Equipo {
     }
 
     /**
-     * Devuelve una representación en texto del equipo con todos sus datos.
+     * Muestra por consola la plantilla del equipo,
+     * mostrando la información de cada jugador.
+     */
+    public void verPlantilla() {
+        for (int i = 0; i < jugadores.size(); i++) {
+            System.out.println(jugadores.get(i));
+        }
+    }
+
+    /**
+     * Transfiere un jugador desde este equipo a otro equipo,
+     * siempre que pertenezca al equipo actual y haya solicitado el traspaso.
      * 
-     * @return cadena con la información del equipo.
+     * @param jug jugador a transferir
+     * @param eq  equipo destino
+     */
+
+    public void transferirJugador(Jugador jug, Equipo eq) {
+        if (jugadores.contains(jug) == true && jug.isTraspasoSolicitado()) {
+            jugadores.remove(jug);
+            eq.getJugadores().add(jug);
+            jug.finalizarTraspaso();
+            System.out.println("Transferencia realizada con exito");
+        } else
+            System.out.println("Transferencia no realizada");
+
+    }
+
+    /**
+     * Devuelve el número total de equipos creados en el sistema.
+     * 
+     * @return número total de equipos creados
+     */
+    public static int getContadorEquipos() {
+        return contadorEquipos;
+    }
+
+    /**
+     * Devuelve una representación en texto del equipo con su informacion basica.
+     * 
+     * @return Ficha tecnica que muestra el nombre del equipo, el nombre del
+     *         entrenador y la cantidad de jugadores del equipo.
      */
 
     @Override
     public String toString() {
-        return "Equipo [nombreEquipo=" + nombreEquipo + "]";
+        return "Ficha Tecnica:"
+                + "\n Equipo: " + nombreEquipo
+                + "\n Entrenador: " + entrenador.getNombreEntrenador()
+                + "\n Jugadores: " + jugadores.size() + "\n";
     }
 
 }

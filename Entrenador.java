@@ -7,6 +7,7 @@
 public class Entrenador {
     private String nombreEntrenador;
     private String formacionPreferida;
+    private static int contadorEntrenadores;
 
     /**
      * Constructor de la clase Entrenador
@@ -18,6 +19,7 @@ public class Entrenador {
     public Entrenador(String nombreEntrenador, String formacionPreferida) {
         this.nombreEntrenador = nombreEntrenador;
         this.formacionPreferida = formacionPreferida;
+        contadorEntrenadores++;
     }
 
     /**
@@ -49,13 +51,24 @@ public class Entrenador {
     }
 
     /**
-     * Devuelve una representación en texto del entrenador con todos sus datos.
+     * Devuelve el número total de entrenadores creados en el sistema.
+     *
+     * @return contador de entrenadores creados
+     */
+    public static int getContadorEntrenadores() {
+        return contadorEntrenadores;
+    }
+
+    /**
+     * Devuelve una representación en textual del entrenador con toda su informacion.
      * 
-     * @return cadena con la información del entrenador
+     * @return representacion legible del entrenador
      */
     @Override
     public String toString() {
-        return "Entrenador [nombreEntrenador=" + nombreEntrenador + ", formacionPreferida=" + formacionPreferida + "]";
+        return "Ficha Tecnica del Entrenador"
+                + "\nNombre: " + nombreEntrenador
+                + "\nFormacion Preferida: " + formacionPreferida + "\n";
     }
 
 }
